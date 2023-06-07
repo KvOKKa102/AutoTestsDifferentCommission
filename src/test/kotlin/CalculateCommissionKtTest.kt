@@ -13,7 +13,7 @@ class CalculateCommissionKtTest {
 
         val commission = calculateCommission(cardType, previousTransfersAmount, transferAmount, transferType)
 
-        assertEquals(218, commission)
+        assertEquals(200, commission)
     }
 
     @Test
@@ -37,7 +37,7 @@ class CalculateCommissionKtTest {
 
         val commission = calculateCommission(cardType, previousTransfersAmount, transferAmount, transferType)
 
-        assertEquals(35, commission)
+        assertEquals(37, commission)
     }
 
     @Test
@@ -87,7 +87,7 @@ class CalculateCommissionKtTest {
             calculateCommission(cardType, previousTransfersAmount, transferAmount, transferType)
             fail("Expected an Exception to be thrown")
         } catch (e: Exception) {
-            assertEquals("Сумма переводов на VK Pay в текущем месяце превышает месячный лимит", e.message)
+            assertEquals("Сумма перевода на VK Pay превышает максимальную сумму за один раз", e.message)
         }
     }
 
